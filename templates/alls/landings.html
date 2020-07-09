@@ -2,9 +2,9 @@
 
 <html>
  <head>
-  <title> CC Redaction Suite </title>
+  <title> BLOG </title>
 
-  <!-- {# <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> #} -->
+  <!-- {# <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> 
   
  </head>
   <body>
@@ -37,11 +37,16 @@
    </table>
  
    </div>
-      
-   <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ mortem.pub_date_preference }}</h4>
+   #} -->
+
+   <h1> BLOG POST:</h1>
+   <h4>Date: {{ mortem.pub_date_preference }}</h4>
    <br />
-   <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
+   Image: <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
    <br />
+   
+   <!-- Body text should go here :   -->
+   Body Text:
    <p>{{ mortem.body|safe }}</p>
    <br />
    <br />
