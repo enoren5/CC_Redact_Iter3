@@ -1,0 +1,54 @@
+{% load static %}
+
+<html>
+ <head>
+  <title> CC Redaction Suite </title>
+
+  <!-- {# <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> #} -->
+  
+ </head>
+  <body>
+    {% block content %}    
+   <h1>Enter your fake Chuckee Cheese Neptune credit card number!</h1>
+
+   <form action="{% url 'home' %}" method="get">
+     <div> 
+       
+       <input type="text" id="password" name="ccEntry" pattern="[0-9]{16}" maxlength="16"/>
+       <label for="password">Enter Card Number</label>
+         <div class="requirements">Must be a 16 digit number and no letters. </div>
+       <input type="submit" value="Redact!" class="button"/>
+     </div>
+   </form>
+      
+   <h1>{{ mortem.title }}</h1>
+
+
+   <h1>Counting the words!</h1> 
+   This should only show inside landing.html
+ 
+   <div class="">
+ 
+   <table>
+       <tr><th>Word</th> <th>Quantity</th></tr>  
+       {% for word, count in top_10 %}
+       <tr> <td>{{word}} </td><td>{{count}} </td></tr>
+       {% endfor %}
+   </table>
+ 
+   </div>
+      
+   <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ mortem.pub_date_preference }}</h4>
+   <br />
+   <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
+   <br />
+   <p>{{ mortem.body|safe }}</p>
+   <br />
+   <br />
+
+{% endblock %}
+
+  </body>
+
+  <style>    </style>
+  </html
