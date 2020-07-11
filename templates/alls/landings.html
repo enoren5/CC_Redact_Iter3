@@ -3,7 +3,7 @@
 <html>
  <head>
   <title> BLOG </title>
-
+  <style>    </style>
   <!-- {# <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> 
   
  </head>
@@ -40,20 +40,22 @@
    #} -->
 
 <h1> BLOG POST:</h1>
-<h4>Date: {{ mortem.pub_date_preference }}</h4>
-<br />
-Image: <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
-<br />
-   
-<!-- Body text should go here :   -->
-Body Text:
-<p>{{ mortem.body|safe }}</p>
-<br />
-<br />
+
+  {% for moertm in mortems %} 
+    <h4>Date: {{ mortem.pub_date_preference }}</h4>
+    <br />
+    Image: <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
+    <br />
+      
+    <!-- Body text should go here :   -->
+    Body Text:
+    <p>{{ mortem.body|safe }}</p>
+    <br />
+    <br />
+  {% endfor %}
 
 {% endblock %}
 
   </body>
 
-  <style>    </style>
-  </html
+</html>
