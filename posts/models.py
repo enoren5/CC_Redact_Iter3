@@ -17,7 +17,7 @@ class Posts(models.Model):
 
     def pub_date_preference(self):
         # a = self.pub_date.timezone.now("US")
-        b = self.pub_date.strftime("%A %d %B %Y @ %-I:%M:%S %p")
+        b = self.pub_date.strftime("%A %d %B %Y @ %I:%M:%S %p")
         # c = pytz.timezone("US")
         return (b)
 
