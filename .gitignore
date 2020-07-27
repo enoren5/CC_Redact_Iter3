@@ -3,7 +3,7 @@ static
 db.sqlite3
 *.code-workspace
 *.sqlite3
-
+*.cpython-38.pyc
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
