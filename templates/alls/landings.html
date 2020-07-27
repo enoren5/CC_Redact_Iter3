@@ -2,14 +2,36 @@
 
 <html>
  <head>
-  <title> BLOG </title>
+  <title>  Chuckee Cheese </title>
   <style>    </style>
   <!-- <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> -->
   
  </head>
   <body>
     {% block content %}    
+
+    <h3>Enter your fake Chuckee Cheese Neptune membership card number!</h3>
+
+    <form action="{% url 'mortems' %}" method="get">
+      <div> 
+        
+        <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12"/>
+        <label for="password">Enter Card Number</label>
+          <div class="requirements">Must be a 12 digit number and no letters. </div>
+        <input type="submit" value="Redact!" class="button"/>
+      </div>
+    </form>
   
+        <h1>Here is your fake Chuckee Cheese Neptune memnership card number!</h1>
+         <h3>This was the original number that you entered:</h3>
+         <div class="field">{{ number }}</div>
+         <h3>Here it is redacted:</h3>
+         <div class="field">{{ redacted_num }}</div>
+     
+        
+     <a href="{% url 'mortems' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+
+    
   <h1> BLOG POST:</h1>
 
   {% for mortem in mortems %} 
@@ -25,6 +47,23 @@
     <br />
     <br />
   {% endfor %}
+
+
+<!-- 
+   <h1>Counting the words!</h1> 
+   This should only show inside landing.html
+ 
+   <div class="">
+ 
+   <table>
+       <tr><th>Word</th> <th>Quantity</th></tr>  
+       {% for word, count in top_10 %}
+       <tr> <td>{{word}} </td><td>{{count}} </td></tr>
+       {% endfor %}
+   </table>
+ 
+   </div>
+   -->
 
 {% endblock %}
 
