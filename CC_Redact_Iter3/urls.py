@@ -8,13 +8,13 @@ urlpatterns = [
     path('', include('redactors.urls')),
     path('', include('counters.urls')),
     path('', include('mortems.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
     # path('', include('work_orders.urls')),
     # path('', include('accounts.urls')),
     # path('', include('generators.urls')),
     # path('', include('landings.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
+    
 """CC_Redact_Iter3 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
