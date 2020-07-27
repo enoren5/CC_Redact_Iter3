@@ -5,7 +5,7 @@ from django.utils.deprecation import MiddlewareMixin
 
 # Create your models here.
 
-class Mortem(models.Model):
+class Posts(models.Model):
     title = models.CharField(max_length=161)
     pub_date = models.DateTimeField()
     image = models.ImageField(upload_to='media/')

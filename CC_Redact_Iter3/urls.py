@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('redactors.urls')),
     path('', include('counters.urls')),
-    path('', include('mortems.urls')),
+    path('', include('posts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     # path('', include('work_orders.urls')),

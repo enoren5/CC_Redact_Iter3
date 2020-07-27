@@ -12,7 +12,7 @@
 
     <h3>Enter your fake Chuckee Cheese Neptune membership card number!</h3>
 
-    <form action="{% url 'mortems' %}" method="get">
+    <form action="{% url 'posts' %}" method="get">
       <div> 
         
         <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12"/>
@@ -29,21 +29,21 @@
          <div class="field">{{ redacted_num }}</div>
      
         
-     <a href="{% url 'mortems' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+     <a href="{% url 'posts' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
 
     
   <h1> BLOG POST:</h1>
 
-  {% for mortem in mortems %} 
-    <h1>{{ mortem.title }}</h1>
-    <h4>Date: {{ mortem.pub_date_preference }}</h4>
+  {% for post in posts %} 
+    <h1>{{ post.title }}</h1>
+    <h4>Date: {{ post.pub_date_preference }}</h4>
     <br />
-    Image: <img src="{{ mortem.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
+    Image: <img src="{{ post.image.url }}" class="img-responsive center-block" style="max-height:300px;" />
     <br />
       
     <!-- Body text should go here :   -->
     Body Text:
-    <p>{{ mortem.body|safe }}</p>
+    <p>{{ post.body|safe }}</p>
     <br />
     <br />
   {% endfor %}
