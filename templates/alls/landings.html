@@ -1,17 +1,35 @@
 {% load static %}
 
-<html>
- <head>
-  <title>  Chuckee Cheese </title>
-  <style>    </style>
-  <!-- <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> -->
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
- </head>
-  <body>
-    {% block content %}    
+  <!-- Custom -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/9a80da2fe7.js" crossorigin="anonymous"></script>
+  
+  <meta name="theme-color" content="#fafafa">
+  
+  <title>CC Redact</title>
+  
+  <style>    </style>
+
+</head>
+    
+<body>
+    
+  {% block content %}    
+    
+
+    <div class="card-processor">
     <h3>Enter your fake Chuckee Cheese Neptune membership card number!</h3>
-
     <form action="{% url 'posts' %}" method="get">
       <div> 
         
@@ -21,19 +39,18 @@
         <input type="submit" value="Redact!" class="button"/>
       </div>
     </form>
-  
-        <h1>Here is your fake Chuckee Cheese Neptune memnership card number!</h1>
-         <h3>This was the original number that you entered:</h3>
-         <div class="field">{{ number }}</div>
-         <h3>Here it is redacted:</h3>
-         <div class="field">{{ redacted_num }}</div>
-     
-        
-     <a href="{% url 'posts' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
-
     
-  <h1> BLOG POST:</h1>
+    <h1>Here is your fake Chuckee Cheese Neptune memnership card number!</h1>
+    <h3>This was the original number that you entered:</h3>
+    <div class="field">{{ number }}</div>
+    <h3>Here it is redacted:</h3>
+    <div class="field">{{ redacted_num }}</div>     
+    <a href="{% url 'posts' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+    </div> <!--- END card-processor -->
 
+
+  <div class="post-content">
+  <h1> BLOG POST:</h1>
   {% for post in posts %} 
     <h1>{{ post.title }}</h1>
     <h4>Date: {{ post.pub_date_preference }}</h4>
@@ -47,6 +64,7 @@
     <br />
     <br />
   {% endfor %}
+  </div> <!-- END post-content -->
 
 
 <!-- 

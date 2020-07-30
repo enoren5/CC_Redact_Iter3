@@ -123,5 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'CC_Redact_Iter3/static/')
 ]
+
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'img')
 MEDIA_URL = 'img/'
