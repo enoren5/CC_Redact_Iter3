@@ -8,7 +8,7 @@ What distinguishes this iteration of this poject from previous iterations is tha
 
 This project includes three core apps:
 * <strong>redactors</strong>: This app accepts the user's 12 digit card number as input and then processes (redacts) it
-* <strong>posts</strong>: This app is kinda like a blog post, but in my production environment I only intend on invoking this app once to create a single blog post which will contain my 'postmortem' to (document everything I learned while writing this Django site)
+* <strong>posts</strong>: This app is kinda like a blog post, but in my production environment I intend on invoking this app only once to create a single blog post which will contain my 'post-mortem' to (document everything I learned while writing this Django site)
 * <strong>counters</strong>: This app will eventually count all the words used in the postmortem and present the data to the user. But for now it just counts the most common words in Alice and Wonderland - - which was a project that I have worked on for a previous Python shell script that I wrote in 2019
 
 After the above features are implemeneted, later I plan on adding these three minor additional features:
