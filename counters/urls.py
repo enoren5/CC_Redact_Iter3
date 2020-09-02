@@ -5,5 +5,4 @@ from . import views
 
 urlpatterns = [
     path('counters', views.counters, name='counters'),
-
 ]
