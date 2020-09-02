@@ -1,7 +1,7 @@
 from django.db import models
 
 ''' def redactors(request):
-    return render(request, 'redactors/simon.html')'''
+    return render(request, 'redactors/simon.html')
 
 def home(request):
     if 'ccEntry' in request.GET:
@@ -13,3 +13,4 @@ def home(request):
 
 def result(request):
      return render(request, 'alls/results.html')
+    '''

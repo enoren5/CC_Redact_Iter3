@@ -5,7 +5,7 @@ from django.utils.deprecation import MiddlewareMixin
 
 # Create your models here.
 
-class Mortem(models.Model):
+class Posts(models.Model):
     title = models.CharField(max_length=161)
     pub_date = models.DateTimeField()
     image = models.ImageField(upload_to='media/')
@@ -17,7 +17,7 @@ class Mortem(models.Model):
 
     def pub_date_preference(self):
         # a = self.pub_date.timezone.now("US")
-        b = self.pub_date.strftime("%A %d %B %Y @ %-I:%M:%S %p")
+        b = self.pub_date.strftime("%A %d %B %Y @ %I:%M:%S %p")
         # c = pytz.timezone("US")
         return (b)
 

@@ -1,5 +1,7 @@
+*.orig
 venv
-static
+/static
+/staticfiles
 db.sqlite3
 *.code-workspace
 *.sqlite3
