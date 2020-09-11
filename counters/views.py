@@ -15,4 +15,4 @@ def counters(request, text=""):
         if word not in stoplist:
             clean.append(word)
     top_10 = Counter(clean).most_common(10)
-    return render(request, 'alls/landing.html', {'top_10': top_10})
+    return render(request, 'alls/landings.html', {'top_10': top_10})

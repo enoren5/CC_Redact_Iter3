@@ -74,22 +74,39 @@
   {% endfor %}
   </div> <!-- END post-content -->
 
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 10%;
+      position: absolute;
+      right: 150px;
+    
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;  
+      border: 1px dashed black;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    
 
-<!-- 
    <h1>Counting the words!</h1> 
    This should only show inside landing.html
- 
    <div class="">
- 
-   <table>
-       <tr><th>Word</th> <th>Quantity</th></tr>  
-       {% for word, count in top_10 %}
-       <tr> <td>{{word}} </td><td>{{count}} </td></tr>
-       {% endfor %}
-   </table>
- 
+    <table>
+        <tr><th>Word</th> <th>Quantity</th></tr>  
+        {% for word, count in top_10 %}
+        <tr> <td>{{word}} </td><td>{{count}} </td></tr>
+        {% endfor %}
+    </table>
    </div>
-   -->
 
 {% endblock %}
 
