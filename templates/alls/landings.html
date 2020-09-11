@@ -29,6 +29,9 @@
     
 
     <div class="card-processor">
+
+      {% if not temp %}
+
     <h1>A</h1>
     <h3>Enter your fake Chuckee Cheese Neptune membership card number!</h3>
     
@@ -43,6 +46,8 @@
 
     </form>
     
+    {% else %}
+
     <h1>B</h1>
     <h3>Here is your fake Chuckee Cheese Neptune membership card number!</h3>
     <h3 style="color:lime">This was the original number that you entered:</h3>
@@ -51,6 +56,8 @@
     <div class="field">{{ redacted_num }}</div>     
     <a href="{% url 'posts' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
     
+    {% endif %}
+
   </div> <!--- END card-processor -->
 
 

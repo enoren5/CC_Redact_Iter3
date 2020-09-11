@@ -7,9 +7,9 @@ def home(request):
         redacted_num = 'xxxx xxxx {}'.format(number[-4:])
         posts = Posts.objects.all().order_by('-pub_date')
         # context = {'posts':posts}
-        return render(request, 'alls/landings.html', {'number':number, 'redacted_num':redacted_num, 'posts':posts, })
+        return render(request, 'alls/landings.html', {'number':number, 'redacted_num':redacted_num, 'posts':posts, "temp": True,})
     else:
-        return render(request, 'alls/landings.html')
+        return render(request, 'alls/landings.html',{"temp": False})
 
 def redactors(request):
     return render(request, 'alls/landings.html')
