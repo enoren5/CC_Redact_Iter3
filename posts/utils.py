@@ -1,25 +1,17 @@
 import re
-
-def word_counts(data):
-
-	delimeters = ['.', ',', '?', '<', '>', '/', ';', ':', '|', '{', '}',
-				  '[', ']', '!', '@', '#', '$', '%', '^', '&', "*",  '(', ')',
-				  '-', '+', '_', '=' '\r']
-
-	data = data.replace('\r', ' ').replace('\n', ' ')
-	for rm in delimeters:
-		data = data.replace(rm, '')
+from collections import Counter
+from nltk.corpus import stopwords
 
 
-	words = data.split(' ')
+def top_word_counts(text):
+	# text = open("counters/Alice.txt", "r").read().lower()
 
-	counts = {}
-	for word in words:
-		if counts.get(word):
-			counts[word] = counts.get(word) + 1
-		else:
-			counts.update({
-				word: 1
-			})
+	stoplist = stopwords.words('english')
+	stoplist.extend(["said", "gutenberg", "could", "would", ])
+	clean = []
+	for word in re.split(r"\W+", text):
+		if word not in stoplist:
+			clean.append(word)
+	top_10 = Counter(clean).most_common(10)
 
-	return counts
+	return top_10
