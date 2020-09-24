@@ -60,6 +60,35 @@
 
   </div> <!--- END card-processor -->
 
+  <h1>Counting the words!</h1>
+  This should only show inside landing.html
+   <div class="word-counts">
+       {% if posts %}
+           <div class="post-counts">
+               <table>
+                   <tr><td colspan="2">Posts Top 10 Word Counts</td></tr>
+                   <tr><th>Words</th> <th>Quantity</th></tr>
+                   {% for word in post_words %}
+                       {% if word %}
+                           <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
+                       {% endif %}
+                   {% endfor %}
+               </table>
+           </div>
+       {% endif %}
+
+       <div class="alice-count">
+           <table>
+               <tr><td colspan="2">Alice Top 10 Word Counts</td></tr>
+               <tr><th>Words</th> <th>Quantity</th></tr>
+               {% for word in alice_words %}
+                   {% if word %}
+                       <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
+                   {% endif %}
+               {% endfor %}
+           </table>
+       </div>
+   </div>
 
   <div class="post-content">
   {% for post in posts %} 
@@ -74,39 +103,6 @@
   {% endfor %}
   </div> <!-- END post-content -->
 
-  <style>
-    </style>
-    
-
-   <h1>Counting the words!</h1>
-   This should only show inside landing.html
-    <div class="word-counts">
-        {% if posts %}
-            <div class="post-counts">
-                <table>
-                    <tr><td colspan="2">Posts Top 10 Word Counts</td></tr>
-                    <tr><th>Words</th> <th>Quantity</th></tr>
-                    {% for word in post_words %}
-                        {% if word %}
-                            <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
-                        {% endif %}
-                    {% endfor %}
-                </table>
-            </div>
-        {% endif %}
-
-        <div class="alice-count">
-            <table>
-                <tr><td colspan="2">Alice Top 10 Word Counts</td></tr>
-                <tr><th>Words</th> <th>Quantity</th></tr>
-                {% for word in alice_words %}
-                    {% if word %}
-                        <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
-                    {% endif %}
-                {% endfor %}
-            </table>
-        </div>
-    </div>
 {% endblock %}
 
   </body>
