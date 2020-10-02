@@ -23,3 +23,6 @@ class Posts(models.Model):
 
     def summary(self):
         return self.body[:1024]
+
+class PageView(models.Model):
+    hits=models.IntegerField(default=0)

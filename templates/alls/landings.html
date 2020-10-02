@@ -70,7 +70,6 @@
     <!-- Body text should go here :   -->
     
     <p>{{ post.body|safe }}</p>
-
   {% endfor %}
   </div> <!-- END post-content -->
 
@@ -131,7 +130,12 @@
             </table>
         </div>
     </div>
-{% endblock %}
+
+    {% if pages %}
+      <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
+    {% endif %}
+
+    {% endblock %}
 
   </body>
 
