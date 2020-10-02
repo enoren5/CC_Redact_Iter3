@@ -1,6 +1,6 @@
 import operator
 from django.shortcuts import redirect, render, get_object_or_404
-from posts.models import Posts, PageView
+from blogs.models import Posts, PageView
 from .utils import top_word_counts
 
 def posts(request):

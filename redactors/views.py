@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from posts.models import Posts
+from blogs.models import Posts
 
 def home(request):
     if 'ccEntry' in request.GET:
