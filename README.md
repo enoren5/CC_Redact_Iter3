@@ -43,3 +43,4 @@ After the above features are implemeneted, later I plan on adding these four min
     - beveled edges for input boxes
     - re-implement slight JS animation
 * For redactors input form, reformat numeric requirements into bullet list, and perhaps be more specific with more explicit instructions about what is acceptable input
+* Start working on using "[Crayon Syntax Highlighter](https://github.com/aramk/crayon-syntax-highlighter )" to prepare for writing my post mortem
