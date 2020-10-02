@@ -10,11 +10,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Custom -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/9a80da2fe7.js" crossorigin="anonymous"></script>
-  
+  <script></script>
   <meta name="theme-color" content="#fafafa">
   
   <title>CC Redact</title>
@@ -33,14 +37,29 @@
       {% if not temp %}
 
     
-    <h3>Enter your fake Chuckee Cheese Neptune membership card number!</h3>
+    <h3>Enter your fake Chuck E Cheese Neptune membership card number here:</h3>
     
     <form action="{% url 'home' %}" method="get">
       
       <div>  
         <!-- <label for="password">Enter Card Number:</label>-->
-        <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12"/>
-        <div class="requirements">Must be a 12 digit number and no letters. </div>
+        <input 
+          type="text" 
+          id="password" 
+          name="ccEntry" 
+          pattern="[0-9]{12}" 
+          maxlength="12" 
+          title="Not Valid"
+          oninvalid="this.setCustomValidity('Not Valid')"
+          onchange="try{setCustomValidity('')}catch(e){}"
+          oninput="setCustomValidity(' ')" 
+          />
+        <div class="requirements">
+          <ul>Must be: 
+            <li>- a 12 digit number</li> 
+            <li>- and no letters.</li> 
+        </ul>
+      </div> <!-- end requriements-->
         <input type="submit" value="Redact!" class="button"/>
       </div>
 
@@ -120,7 +139,7 @@
 
         <div class="alice-count">
             <table>
-                <tr><td colspan="2">Alice Top 10 Word Counts</td></tr>
+                <tr><td colspan="2">Bible Top 10 Word Counts</td></tr>
                 <tr><th>Words</th> <th>Quantity</th></tr>
                 {% for word in alice_words %}
                     {% if word %}
@@ -130,16 +149,33 @@
             </table>
         </div>
     </div>
-    <footer>
+    
+    <!-- Footer -->
+  <footer class="page-footer font-small teal pt-4">
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center text-md-left">
     {% if pages %}
-      <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
+    <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
     {% endif %}
+  </div>
+  <div class="footer-copyright text-center py-3">
+  <!-- Footer Text -->
+  The current date and time is {% now "l j F Y @ g:i:s A" %}
+  <br>
+  <!-- Copyright -->
+  Public Domain © 2007 - {% now "Y" %}
+  </div>
+
+</footer> <!-- Footer -->
+
+    
     <br>
-    It is {% now "l j F Y @ g:i:s A" %}
+    
     <br>
-    Public Domain (c) 2007-{% now "Y" %}
+
     <br>
-    </footer>
+
     {% endblock %}
 
   </body>

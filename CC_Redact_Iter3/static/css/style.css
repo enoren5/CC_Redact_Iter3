@@ -1,7 +1,11 @@
 html {
     background-color: whitesmoke;
 }
-
+body {
+    width: 1024px;
+    margin: auto;
+    
+}
 .card-processor {
     float: left;
     width: 300px;
@@ -19,8 +23,9 @@ html {
 .post-content {
     background-color: whitesmoke;
     padding: 10px;
-    margin: 10px;
+    margin: 0px;
     border: 10px;
+    margin-top: 125px;
 }
 
 h1 {
@@ -63,7 +68,7 @@ form > div > label {
 form > div > input[type="text"],
 form > div > input[type="email"],
 form > div > input[type="password"] {
-  width: 50%;
+  width: 68%;
   border: 0;
   padding: 20px 20px 20px 50px;
   background: #CCC;
@@ -119,8 +124,9 @@ form > div .requirements {
   color: pink;
   font-style: italic;
   text-shadow: 0 0 9px white;
-  margin-top:25px;
+  margin-top: 7px;
   font-weight: bold;
+  text-align: left;
 }
 form input[type="submit"] {
   
@@ -214,3 +220,16 @@ form input[type="submit"] {
         font-weight: bold;
         text-shadow: 0 0 9px white;
      }
+
+     ul {
+         padding-left: 10px;
+         margin: 0px;
+         margin-top: 15px;
+     }
+     
+     li { 
+         padding-left: 30px;
+         list-style-type: none;
+     }
+
+     
