@@ -13,10 +13,11 @@ def posts(request):
         x = PageView.objects.all()[0]
         x.hits = x.hits+1
         x.save()
+    context = {'pages':x.hits}
     
     # The posts content:
     posts = Posts.objects.all().order_by('-pub_date')
-    context = {'posts':posts, 'pages':x.hits}
+    context.update({'posts':posts})
     post_string = ''
     for post in posts:
         post_string += post.body
