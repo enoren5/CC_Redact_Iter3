@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'posts',
     'redactors',
     'counters',
+    'mile2km',
 ]
 
 MIDDLEWARE = [

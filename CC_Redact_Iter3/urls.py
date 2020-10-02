@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('redactors.urls')),
     path('', include('posts.urls')),    
     path('', include('counters.urls')),
+    path('', include('mile2km.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     # path('', include('work_orders.urls')),
