@@ -21,10 +21,11 @@ Those instructions are for Linux. I believe macOS is similar. No idea for Window
 
 ## CURRENT FEATURE LIST
 
-This project includes three core apps:
-* <strong>redactors</strong>: This app accepts the user's 12 digit card number as input and then processes (redacts) it
-* <strong>posts</strong>: This app is kinda like a blog post, but in my production environment I intend on invoking this app only once to create a single blog post which will contain my 'post-mortem' to (document everything I learned while writing this Django site)
-* <strong>counters</strong>: This app will eventually count all the words used in the postmortem and present the data to the user. But for now it just counts the most common words in a text file of the public domain work Alice and Wonderland - - which was a project that I have worked on for a previous Python shell script that I wrote in 2019
+This project includes four core apps:
+* <strong>redactors</strong>: This app accepts the user's 12 digit card number as input and then processes (redacts) it.
+* <strong>blogs</strong>: This app enables the author of the website to share blog  post. In the production environment I intend on invoking this app only once to create a single blog post which will contain my 'post-mortem' which I will use to document everything I learned while writing this Django site.
+* <strong>wordcounters</strong>: This app counts all the words used in a blog post and presents top 10 most frequently used words (and filters out common words such as 'the', 'this', 'you', 'me'). It also counts and ranks the most common words in a text file of the public domain work Alice and Wonderland and even the Holy Bible.
+* <strong>converters</strong>: This app is a basic HTML input form which enables web visitors to convert miles to kilometers and kilometers to miles.
 
 ## TO DO
 
