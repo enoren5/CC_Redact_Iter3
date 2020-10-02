@@ -7,9 +7,9 @@ def mile2km(request):
         ratio = float(1.60934) 
         km = mile * ratio # output defined
         context = { "km" : km, "temp": True,}
-        return render(request, 'alls/converter.html', context)
+        return render(request, 'alls/converters.html', context)
     else:
-        return render(request, 'alls/converter.html', {"temp": False,}) 
+        return render(request, 'alls/converters.html', {"temp": False,}) 
 
 def km2mile(request):
     if 'km2mile' in request.GET:
@@ -18,8 +18,8 @@ def km2mile(request):
         ratio = float(1.60934) 
         mile = km / ratio # output defined
         context = { "mile": mile, "temp": True,}
-        return render(request, 'alls/converter.html', context)
+        return render(request, 'alls/converters.html', context)
     else:
-        return render(request, 'alls/converter.html', {"temp": False,}) 
+        return render(request, 'alls/converters.html', {"temp": False,}) 
     
     

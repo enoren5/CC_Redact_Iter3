@@ -2,7 +2,7 @@
 
 <html>
   <head>
-   <title> Distance Converter </title>
+   <title> Distance Converters </title>
   </head>
  <body>
 
@@ -16,14 +16,14 @@ Would you like to <a href="#">convert kilometers to miles</a>?
   {% if not temp %}
 
     <h1>Enter miles value to be converted into km</h1>
-    <form action="{% url 'converter' %}" method="get">
+    <form action="{% url 'converters' %}" method="get">
     <input type="text" id="password" name="mile2km"/>
     <label for="password"> </label>
     <input type="submit" value="Convert!" class="button"/>
     </form>
 
     <h1>Enter km value to be converted into miles</h1>
-    <form action="{% url 'converter' %}" method="get">
+    <form action="{% url 'converters' %}" method="get">
     <input type="text" id="password" name="km2mile"/>
     <label for="password"> </label>
     <input type="submit" value="Convert!" class="button"/>
@@ -39,7 +39,7 @@ Would you like to <a href="#">convert kilometers to miles</a>?
 
     <div class="field"> {{ mile }} </div>
     
-    <a href="{% url 'converter' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+    <a href="{% url 'converters' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
 
   {% endif %}
 

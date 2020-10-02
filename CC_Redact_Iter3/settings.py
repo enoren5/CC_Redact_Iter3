@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'blogs',
     'redactors',
     'counters',
-    'converter',
+    'converters',
 ]
 
 MIDDLEWARE = [
