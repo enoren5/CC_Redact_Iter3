@@ -1,1 +1,20 @@
-Eureka!
+{% load static %}
+
+<html>
+  <head>
+   <title> Distance Converter </title>
+  </head>
+ <body>
+
+{% block content %}
+<h1>Enter miles value to be converted into km</h1>
+<form action="{% url 'mile2km' %}" method="get">
+<input type="text" id="password" name="mile2km"/>
+<label for="password"> </label>
+<input type="submit" value="Convert!" class="button"/>
+</form>
+
+{% endblock %}
+
+ </body>
+</html>
