@@ -7,33 +7,49 @@
  <body>
 
 {% block content %}
-<h1>Enter miles value to be converted into km</h1>
-<form action="{% url 'mile2km' %}" method="get">
-<input type="text" id="password" name="mile2km"/>
-<label for="password"> </label>
-<input type="submit" value="Convert!" class="button"/>
-</form>
-<h1>Enter km value to be converted into miles</h1>
-<form action="{% url 'mile2km' %}" method="get">
-<input type="text" id="password" name="km2mile"/>
-<label for="password"> </label>
-<input type="submit" value="Convert!" class="button"/>
-</form>
 
-<center>
-Yayhoo!       
-<h3>Here is your distance converted to kilometers:</h3>
-</center>
 
-<div class="field"> {{ km }} </div>
 
-<center>
-<h3>Here is your distance converted to miles:</h3>
-</center>
 
-<div class="field"> {{ mile }} </div>
+
+  <center>
+
+  {% if not temp %}
+
+    <h1>Enter miles value to be converted into km</h1>
+    <form action="{% url 'converter' %}" method="get">
+    <input type="text" id="password" name="mile2km"/>
+    <label for="password"> </label>
+    <input type="submit" value="Convert!" class="button"/>
+    </form>
+
+    <h1>Enter km value to be converted into miles</h1>
+    <form action="{% url 'converter' %}" method="get">
+    <input type="text" id="password" name="km2mile"/>
+    <label for="password"> </label>
+    <input type="submit" value="Convert!" class="button"/>
+    </form>
+
+    Yayhoo!       
+
+  {% else %}
+
+    <h3>Here is your distance converted to kilometers:</h3>
+
+    <div class="field"> {{ km }} </div>
+
+    <h3>Here is your distance converted to miles:</h3>
+
+    <div class="field"> {{ mile }} </div>
+    
+    <a href="{% url 'converter' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+
+  {% endif %}
+
+  </center>
 
 {% endblock %}
 
  </body>
+
 </html>
