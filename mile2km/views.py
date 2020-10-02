@@ -6,11 +6,20 @@ def mile2km(request):
         mile = float(mile) # cast mile value to float
         ratio = float(1.60934) 
         km = mile * ratio # output defined
-        context = {"km":km}
+        context = { "km" : km }
         return render(request, 'alls/results.html', context)
     else:
         return render(request, 'alls/mile2km.html') 
 
-    # collect mile input from client somehow
+def km2mile(request):
+    if 'km2mile' in request.GET:
+        km = request.GET['km2mile']
+        km = float(km) # cast mile value to float
+        ratio = float(1.60934) 
+        mile = km / ratio # output defined
+        context = { "mile": mile }
+        return render(request, 'alls/results.html', context)
+    else:
+        return render(request, 'alls/mile2km.html') 
     
     

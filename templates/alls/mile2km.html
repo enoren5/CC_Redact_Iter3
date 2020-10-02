@@ -13,7 +13,12 @@
 <label for="password"> </label>
 <input type="submit" value="Convert!" class="button"/>
 </form>
-
+<h1>Enter km value to be converted into miles</h1>
+<form action="{% url 'mile2km' %}" method="get">
+<input type="text" id="password" name="km2mile"/>
+<label for="password"> </label>
+<input type="submit" value="Convert!" class="button"/>
+</form>
 {% endblock %}
 
  </body>
