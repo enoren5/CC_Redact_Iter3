@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogs',
     'redactors',
-    'counters',
+    'wordcounters',
     'converters',
 ]
 

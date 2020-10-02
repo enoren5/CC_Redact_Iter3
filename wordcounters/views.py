@@ -3,11 +3,11 @@ from collections import Counter
 import re
 from nltk.corpus import stopwords
 
-def counters(request, text=""):
+def wordcounters(request, text=""):
     """
     This function processes the top 10 most common words in a text file and then renders them.
     """
-    text = open("counters/Alice.txt", "r").read().lower()
+    text = open("wordcounters/Alice.txt", "r").read().lower()
     stoplist = stopwords.words('english')
     stoplist.extend(["said","gutenberg", "could", "would",]) 
     clean = []

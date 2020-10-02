@@ -8,7 +8,7 @@ urlpatterns = [
     # path('', include('mortems.urls')),
     path('', include('redactors.urls')),
     path('', include('blogs.urls')),    
-    path('', include('counters.urls')),
+    path('', include('wordcounters.urls')),
     path('', include('converters.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
