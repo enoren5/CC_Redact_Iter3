@@ -1,0 +1,52 @@
+{% load static %}
+
+<html>
+  <head>
+   <title> Distance Converter </title>
+  </head>
+ <body>
+
+{% block content %}
+
+<center>
+
+Would you like to <a href="#">convert kilometers to miles</a>? 
+<br>Or you prefer to <a href="#">convert miles to kilometers</a>?
+
+  {% if not temp %}
+
+    <h1>Enter miles value to be converted into km</h1>
+    <form action="{% url 'converter' %}" method="get">
+    <input type="text" id="password" name="mile2km"/>
+    <label for="password"> </label>
+    <input type="submit" value="Convert!" class="button"/>
+    </form>
+
+    <h1>Enter km value to be converted into miles</h1>
+    <form action="{% url 'converter' %}" method="get">
+    <input type="text" id="password" name="km2mile"/>
+    <label for="password"> </label>
+    <input type="submit" value="Convert!" class="button"/>
+    </form>
+
+  {% else %}
+
+    <h3>Here is your distance converted to kilometers:</h3>
+
+    <div class="field"> {{ km }} </div>
+
+    <h3>Here is your distance converted to miles:</h3>
+
+    <div class="field"> {{ mile }} </div>
+    
+    <a href="{% url 'converter' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+
+  {% endif %}
+
+  </center>
+
+{% endblock %}
+
+ </body>
+
+</html>

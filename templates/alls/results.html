@@ -1,23 +1,27 @@
- 
 {% load static %}
 
 <html>
- <head>
-  <title> CC Redaction Suite </title>
-   <!-- {#  <link rel="stylesheet" href="{% static 'redactors/style.css' %}"> #} -->
- </head>
-  <body>
-    {% block content %}
+  <head>
+   <title> Distance Converter </title>
+  </head>
+ <body>
 
-      <h1>Here is your fake Chuckee Cheese Neptune credit card number!</h1>
-       <h3>This was the original number that you entered:</h3>
-       <div class="field">{{ number }}</div>
-       <h3>Here it is redacted:</h3>
-       <div class="field">{{ redacted_num }}</div>
-   
-    {% endblock %}
+{% block content %}
 
-   <a href="{% url 'mortems' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+    <center>
+    Yayhoo!       
+    <h3>Here is your distance converted to kilometer:</h3>
+    </center>
 
-  </body>
-  </html>
+    <div class="field">{{ km }}</div>
+    <center>
+    <h3>Here is your distance converted to kilometer:</h3>
+    </center>
+    <div class="field">{{ mile }}</div>
+    
+    <a href="{% url 'mile2km' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
+
+{% endblock %}
+
+ </body>
+</html>
