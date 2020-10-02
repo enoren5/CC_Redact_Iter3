@@ -26,7 +26,7 @@
 <body>
     
   {% block content %}    
-    
+  
 
     <div class="card-processor">
 
@@ -130,11 +130,13 @@
             </table>
         </div>
     </div>
-
+    <footer>
     {% if pages %}
       <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
     {% endif %}
-
+    <br>
+    It is {% now "l j F Y @ g:i:s A" %}
+    </footer>
     {% endblock %}
 
   </body>
