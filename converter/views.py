@@ -6,20 +6,20 @@ def mile2km(request):
         mile = float(mile) # cast mile value to float
         ratio = float(1.60934) 
         km = mile * ratio # output defined
-        context = { "km" : km }
+        context = { "km" : km, "temp": True,}
         return render(request, 'alls/converter.html', context)
     else:
-        return render(request, 'alls/converter.html') 
+        return render(request, 'alls/converter.html', {"temp": False,}) 
 
 def km2mile(request):
     if 'km2mile' in request.GET:
         km = request.GET['km2mile']
-        km = float(km) # cast mile value to float
+        km = float(km) # cast km value to float
         ratio = float(1.60934) 
         mile = km / ratio # output defined
-        context = { "mile": mile }
+        context = { "mile": mile, "temp": True,}
         return render(request, 'alls/converter.html', context)
     else:
-        return render(request, 'alls/converter.html') 
+        return render(request, 'alls/converter.html', {"temp": False,}) 
     
     
