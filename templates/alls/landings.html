@@ -123,32 +123,34 @@
             </table>
         </div>
     </div>
-    
-    <!-- Footer -->
-  <footer class="page-footer font-small teal pt-4">
+  </div> 
+</div> 
+  <br>
 
-  <!-- Footer Text -->
-  <div class="container-fluid text-center text-md-left">
-    {% if pages %}
+  {% if pages %}
     <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
-    {% endif %}
-  </div>
-  <div class="footer-copyright text-center py-3">
-  <!-- Footer Text -->
+  {% endif %}
+  
+  <br>
   The current date and time is {% now "l j F Y @ g:i:s A" %}
   <br>
-  <!-- Copyright -->
+  
   Public Domain © 2007 - {% now "Y" %}
+  <br>
+
+  
+<!-- BOOTSTRAP FOOTER BEGIN -->
+
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
   </div>
+  <!-- Copyright -->
 
-</footer> <!-- Footer -->
-
-    
-    <br>
-    
-    <br>
-
-    <br>
+</footer>
+<!-- BOOTSTRAP FOOTER END -->
 
     {% endblock %}
 
