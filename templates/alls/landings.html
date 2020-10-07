@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Custom -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -135,24 +136,20 @@
   <!-- END post-content -->
 
 
-
-
-  {% if pages %}
-  <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
-  {% endif %}
-
-  <br>
-  The current date and time is {% now "l j F Y @ g:i:s A" %}
-  <br>
-
-  Public Domain © 2007 - {% now "Y" %}
-  <br>
-
-
   <!-- BOOTSTRAP FOOTER BEGIN -->
 
   <footer class="page-footer font-small blue">
-
+    <br>
+    <center>{% if pages %}
+    <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
+    {% endif %}
+  
+    
+    The current date and time is {% now "l j F Y @ g:i:s A" %}
+    <br>
+  
+    Public Domain © 2007 - {% now "Y" %}
+    <br></center>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
       <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
