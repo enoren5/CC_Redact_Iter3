@@ -25,7 +25,7 @@ def posts(request):
     # Counting words of Bible.txt + posts content:
     post_words = top_word_counts(post_string.lower())
     alice_words = top_word_counts(
-        open("wordcounters/Alice.txt", "r").read().lower())
+        open("wordcounters/Bible.txt", "r").read().lower())
 
     context.update({
         'post_words': post_words,
