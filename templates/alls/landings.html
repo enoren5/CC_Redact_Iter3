@@ -136,24 +136,20 @@
   <!-- END post-content -->
 
 
-
-
-  {% if pages %}
-  <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
-  {% endif %}
-
-  <br>
-  The current date and time is {% now "l j F Y @ g:i:s A" %}
-  <br>
-
-  Public Domain © 2007 - {% now "Y" %}
-  <br>
-
-
   <!-- BOOTSTRAP FOOTER BEGIN -->
 
   <footer class="page-footer font-small blue">
-
+    <br>
+    <center>{% if pages %}
+    <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
+    {% endif %}
+  
+    
+    The current date and time is {% now "l j F Y @ g:i:s A" %}
+    <br>
+  
+    Public Domain © 2007 - {% now "Y" %}
+    <br></center>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
       <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
