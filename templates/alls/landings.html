@@ -3,12 +3,13 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="description" content="The HTML5 Herald">
   <meta name="robots" content="noindex,nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Custom -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,140 +21,149 @@
   <script src="https://kit.fontawesome.com/9a80da2fe7.js" crossorigin="anonymous"></script>
   <script></script>
   <meta name="theme-color" content="#fafafa">
-  
+
   <title>CC Redact</title>
-  
-  <style>    </style>
+
+  <style> </style>
 
 </head>
-    
+
 <body>
-    
-  {% block content %}    
-  
 
-    <div class="card-processor">
+  {% block content %}
 
-      {% if not temp %}
 
-    
+  <div class="card-processor">
+
+    {% if not temp %}
+
+
     <h3>Enter your fake Chuck E Cheese Neptune membership card number here:</h3>
-    
+
     <form action="{% url 'home' %}" method="get">
-      
-      <div>  
+
+      <div>
         <!-- <label for="password">Enter Card Number:</label>-->
-        <input 
-          type="text" 
-          id="password" 
-          name="ccEntry" 
-          pattern="[0-9]{12}" 
-          maxlength="12" 
-          title="Not Valid"
-          oninvalid="this.setCustomValidity('Not Valid')"
-          onchange="try{setCustomValidity('')}catch(e){}"
-          oninput="setCustomValidity(' ')" 
-          />
+        <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12" title="Not Valid"
+          oninvalid="this.setCustomValidity('Not Valid')" onchange="try{setCustomValidity('')}catch(e){}"
+          oninput="setCustomValidity(' ')" />
         <div class="requirements">
-          <ul>Must be: 
-            <li>- a 12 digit number</li> 
-            <li>- and no letters.</li> 
-        </ul>
-      </div> <!-- end requriements-->
-        <input type="submit" value="Redact!" class="button"/>
+          <ul>Must be:
+            <li>- a 12 digit number</li>
+            <li>- and no letters.</li>
+          </ul>
+        </div>
+        <!-- end requriements-->
+        <input type="submit" value="Redact!" class="button" />
       </div>
 
     </form>
-    
+
     {% else %}
 
-    
+
     <h3>Here is your fake Chuckee Cheese Neptune membership card number!</h3>
     <h3 style="color:lime">This was the original number that you entered:</h3>
     <div class="field">{{ number }}</div>
     <h3 style="color:lime">Here it is redacted:</h3>
-    <div class="field">{{ redacted_num }}</div>     
-    <a href="{% url 'posts' %}"><div class="field"><strong>Again? Click here!</strong></div></a>
-    
+    <div class="field">{{ redacted_num }}</div>
+    <a href="{% url 'posts' %}">
+      <div class="field"><strong>Again? Click here!</strong></div>
+    </a>
+
     {% endif %}
 
-  </div> <!--- END card-processor -->
+  </div>
+  <!--- END card-processor -->
 
 
   <div class="post-content">
-  {% for post in posts %} 
+    {% for post in posts %}
     <h1> Blog post title: <em>{{ post.title }}</strong></em>
-    <h4>Publication Date: {{ post.pub_date_preference }}</h4>
-    <img src="{{ post.image.url }}" class="authors-pic" />
-      
-    <!-- Body text should go here :   -->
-    
-    <p>{{ post.body|safe }}</p>
-  {% endfor %}
-  </div> <!-- END post-content -->
+      <h4>Publication Date: {{ post.pub_date_preference }}</h4>
+      <img src="{{ post.image.url }}" class="authors-pic" />
 
- 
+      <!-- Body text should go here :   -->
 
-   <h1>Counting the words!</h1>
-   This should only show inside landing.html
-    <div class="word-counts">
-        {% if posts %}
-            <div class="post-counts">
-                <table>
-                    <tr><td colspan="2">Posts Top 10 Word Counts</td></tr>
-                    <tr><th>Words</th> <th>Quantity</th></tr>
-                    {% for word in post_words %}
-                        {% if word %}
-                            <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
-                        {% endif %}
-                    {% endfor %}
-                </table>
-            </div>
-        {% endif %}
+      <!-- HTML TABLES -->
+      {% if posts %}
+      <div id='post-counts' class="post-counts">
+        <table>
+          <tr>
+            <td colspan="2">Posts Top 10 Word Counts</td>
+          </tr>
+          <tr>
+            <th>Words</th>
+            <th>Quantity</th>
+          </tr>
+          {% for word in post_words %}
+          {% if word %}
+          <tr>
+            <td>{{ word.0 }} </td>
+            <td>{{ word.1 }} </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      {% endif %}
 
-        <div class="alice-count">
-            <table>
-                <tr><td colspan="2">Bible Top 10 Word Counts</td></tr>
-                <tr><th>Words</th> <th>Quantity</th></tr>
-                {% for word in alice_words %}
-                    {% if word %}
-                        <tr> <td>{{ word.0 }} </td><td>{{ word.1 }} </td></tr>
-                    {% endif %}
-                {% endfor %}
-            </table>
-        </div>
-    </div>
-  </div> 
-</div> 
-  <br>
+      <div id='alice-count' class="alice-count">
+        <table>
+          <tr>
+            <td colspan="2">Bible Top 10 Word Counts</td>
+          </tr>
+          <tr>
+            <th>Words</th>
+            <th>Quantity</th>
+          </tr>
+          {% for word in alice_words %}
+          {% if word %}
+          <tr>
+            <td>{{ word.0 }} </td>
+            <td>{{ word.1 }} </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <!-- HTML TABLES -->
+
+      <p>{{ post.body|safe }}</p>
+      {% endfor %}
+  </div>
+  <!-- END post-content -->
+
+
+
 
   {% if pages %}
-    <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
+  <div class="hitcounter">Total number of page views (hits): {{ pages}}</div>
   {% endif %}
-  
+
   <br>
   The current date and time is {% now "l j F Y @ g:i:s A" %}
   <br>
-  
+
   Public Domain © 2007 - {% now "Y" %}
   <br>
 
-  
-<!-- BOOTSTRAP FOOTER BEGIN -->
 
-<footer class="page-footer font-small blue">
+  <!-- BOOTSTRAP FOOTER BEGIN -->
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
+  <footer class="page-footer font-small blue">
 
-</footer>
-<!-- BOOTSTRAP FOOTER END -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
 
-    {% endblock %}
+  </footer>
+  <!-- BOOTSTRAP FOOTER END -->
 
-  </body>
+  {% endblock %}
+
+</body>
 
 </html>
