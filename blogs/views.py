@@ -6,6 +6,12 @@ from .utils import top_word_counts
 def posts(request):
     # Based on Pankaj Mishra's SO answere here: https://stackoverflow.com/a/45411928/6095646
     # This is Pankaj Mishra's hit counter:
+    context = BlogWordsCount()
+
+    return render(request, 'alls/landings.html', context)
+
+def BlogWordsCount():
+
     if (PageView.objects.count()<=0):
         x = PageView.objects.create()
         x.save()
@@ -31,6 +37,4 @@ def posts(request):
         'post_words': post_words,
         'alice_words': alice_words
     })
-
-    return render(request, 'alls/landings.html', context)
-
+    return context
