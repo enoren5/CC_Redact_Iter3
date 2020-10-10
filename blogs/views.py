@@ -2,6 +2,7 @@ import operator
 from django.shortcuts import redirect, render, get_object_or_404
 from blogs.models import Posts, PageView
 from .utils import top_word_counts
+from wordcounters.views import wordcounters
 
 def posts(request):
     # Based on Pankaj Mishra's SO answere here: https://stackoverflow.com/a/45411928/6095646
@@ -14,23 +15,11 @@ def posts(request):
         x.hits = x.hits+1
         x.save()
     context = {'pages':x.hits}
-    
-    # The posts content:
+
     posts = Posts.objects.all().order_by('-pub_date')
     context.update({'posts':posts})
-    post_string = ''
-    for post in posts:
-        post_string += post.body
-    
-    # Counting words of Bible.txt + posts content:
-    post_words = top_word_counts(post_string.lower())
-    alice_words = top_word_counts(
-        open("wordcounters/Alice.txt", "r").read().lower())
 
-    context.update({
-        'post_words': post_words,
-        'alice_words': alice_words
-    })
+    context.update(wordcounters(request))
 
     return render(request, 'alls/landings.html', context)
-
+    
