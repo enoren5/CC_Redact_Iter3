@@ -1,136 +1,144 @@
 html {
-    background-color: whitesmoke;
+	background-color: whitesmoke;
 }
+
 body {
-    width: 1024px;
-    margin: auto;
-    
+	max-width: 1024px;
+	width: 100%;
+	margin: auto;
 }
+
 .card-processor {
-    float: left;
-    width: 300px;
-    text-align: center;
-    padding: 10px;
-    border: black dotted;
-    border-radius: 3%;
-    background: #333;
-    font-family: 'PT Sans', sans-serif;
-    color: white;
-    margin: 40px;
-    text-align: center;
+	float: left;
+	width: 300px;
+	text-align: center;
+	padding: 10px;
+	border: black dotted;
+	border-radius: 3%;
+	background: #333;
+	font-family: 'PT Sans', sans-serif;
+	color: white;
+	margin: 40px;
+	text-align: center;
 }
 
 .post-content {
-    background-color: whitesmoke;
-    padding: 10px;
-    margin: 0px;
-    border: 10px;
-    margin-top: 125px;
+	background-color: whitesmoke;
+	padding: 10px;
+	margin: 0px;
+	border: 10px;
+	margin-top: 125px;
 }
 
 h1 {
-    color: crimson;
-    text-shadow: 2px 2px black;
+	color: crimson;
+	text-shadow: 2px 2px black;
 }
 
 .authors-pic {
-    float: right;
-    margin:40px;
+	float: right;
+	margin: 40px;
 }
-
 
 .hitcounter {
-    position: bottom; 
-    bottom: 1;
+	position: bottom;
+	bottom: 1;
 }
-
-
 
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 form {
-  max-width: 450px;
-  margin: 0 auto;
-  padding-top: 7%;
+	max-width: 450px;
+	margin: 0 auto;
+	padding-top: 7%;
 }
-form > div {
-  position: relative;
-  /*background:#333;*/
-  
-  border-bottom: 0px solid #ccc;
-}
-form > div > label {
-  opacity: 0.3;
-  font-weight: bold;
-  position: absolute;
-  top: 18px;
-  left: 20px;
-}
-form > div > input[type="text"],
-form > div > input[type="email"],
-form > div > input[type="password"] {
-  width: 68%;
-  border: 0;
-  padding: 20px 20px 20px 50px;
-  background: #CCC;
-}
-form > div > input[type="text"]:focus,
-form > div > input[type="email"]:focus,
-form > div > input[type="password"]:focus {
-  outline: 0;
-  background: white;
-}
-form > div > input[type="text"]:focus + label,
-form > div > input[type="email"]:focus + label,
-form > div > input[type="password"]:focus + label {
-  opacity: 0;
-}
-form > div > input[type="text"]:valid,
-form > div > input[type="email"]:valid,
-form > div > input[type="password"]:valid {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: 20px 20px;
-  background: white;
-  }
 
-form > div > input[type="text"]:valid + label,
-form > div > input[type="email"]:valid + label,
-form > div > input[type="password"]:valid + label {
-  opacity: 0;
+form>div {
+	position: relative;
+	/*background:#333;*/
+	border-bottom: 0px solid #ccc;
 }
-form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
-form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
-form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
-  background: pink;
+
+form>div>label {
+	opacity: 0.3;
+	font-weight: bold;
+	position: absolute;
+	top: 18px;
+	left: 20px;
 }
-form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label,
-form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label,
-form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) + label {
-  opacity: 0;
+
+form>div>input[type="text"],
+form>div>input[type="email"],
+form>div>input[type="password"] {
+	width: 68%;
+	border: 0;
+	padding: 20px 20px 20px 50px;
+	background: #CCC;
 }
-form > div > input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-form > div > input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-form > div > input[type="password"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
-  max-height: 200px;
-  padding: 0 30px 20px 50px;
+
+form>div>input[type="text"]:focus,
+form>div>input[type="email"]:focus,
+form>div>input[type="password"]:focus {
+	outline: 0;
+	background: white;
 }
-form > div .requirements {
-  padding: 0 30px 0 50px;
-  color: #999;
-  max-height: 0;
-  transition: 0.28s;
-  overflow: hidden;
-  color: pink;
-  font-style: italic;
-  text-shadow: 0 0 9px white;
-  margin-top: 7px;
-  font-weight: bold;
-  text-align: left;
+
+form>div>input[type="text"]:focus+label,
+form>div>input[type="email"]:focus+label,
+form>div>input[type="password"]:focus+label {
+	opacity: 0;
 }
+
+form>div>input[type="text"]:valid,
+form>div>input[type="email"]:valid,
+form>div>input[type="password"]:valid {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 20px 20px;
+	background: white;
+}
+
+form>div>input[type="text"]:valid+label,
+form>div>input[type="email"]:valid+label,
+form>div>input[type="password"]:valid+label {
+	opacity: 0;
+}
+
+form>div>input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+form>div>input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+form>div>input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+	background: pink;
+}
+
+form>div>input[type="text"]:invalid:not(:focus):not(:placeholder-shown)+label,
+form>div>input[type="email"]:invalid:not(:focus):not(:placeholder-shown)+label,
+form>div>input[type="password"]:invalid:not(:focus):not(:placeholder-shown)+label {
+	opacity: 0;
+}
+
+form>div>input[type="text"]:invalid:focus:not(:placeholder-shown)~.requirements,
+form>div>input[type="email"]:invalid:focus:not(:placeholder-shown)~.requirements,
+form>div>input[type="password"]:invalid:focus:not(:placeholder-shown)~.requirements {
+	max-height: 200px;
+	padding: 0 30px 20px 50px;
+}
+
+form>div .requirements {
+	padding: 0 30px 0 50px;
+	color: #999;
+	max-height: 0;
+	transition: 0.28s;
+	overflow: hidden;
+	color: pink;
+	font-style: italic;
+	text-shadow: 0 0 9px white;
+	margin-top: 7px;
+	font-weight: bold;
+	text-align: left;
+}
+
 form input[type="submit"] {
-  
-  /*display: block;
+	/*display: block;
   width: 100%;
   margin: 10px 0;
   background: #41D873;
@@ -141,128 +149,142 @@ form input[type="submit"] {
   font-weight: bold;
   text-shadow: 0 0 9px blue;
   display: inline-block;*/
-
-  width: 50%;
-  margin: 30px 0;
-  padding: 20px;
-  
-  border: 1px solid #006bb3;
-  border-radius: 15px;
-  color: white;
-  font-family: "Ubuntu", "Trebuchet MS", "Helvetica", sans-serif;
-  font-weight: 500;
-  font-size: inherit;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0px -1px 2px rgba(255, 255, 255, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.8) inset;
-  font-weight: bold;
-  background: #1D1;
-  background: linear-gradient(#1D1, #0ebc0e);
-  border-color: #0c960c;
-  text-shadow: 0 -1px #0c960c;
+	width: 50%;
+	margin: 30px 0;
+	padding: 20px;
+	border: 1px solid #006bb3;
+	border-radius: 15px;
+	color: white;
+	font-family: "Ubuntu", "Trebuchet MS", "Helvetica", sans-serif;
+	font-weight: 500;
+	font-size: inherit;
+	text-decoration: none;
+	text-align: center;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0px -1px 2px rgba(255, 255, 255, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+	font-weight: bold;
+	background: #1D1;
+	background: linear-gradient(#1D1, #0ebc0e);
+	border-color: #0c960c;
+	text-shadow: 0 -1px #0c960c;
 }
+
 
 /* the follow with help from this Pen: https://codepen.io/Geo1088/pen/NqaXrV?editors=1100 */
 
 .button:hover {
-    background: #0ebc0e;
-    background: linear-gradient(#0ebc0e, #0c960c);
-    border-color: #064f06;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px -1px 2px rgba(255, 255, 255, 0.25) inset, 0 1px 1px rgba(255, 255, 255, 0.4) inset;
-    }
-    .button:hover:active {
-    background: #0c960c;
-    background: linear-gradient(#0c960c, #0ebc0e);
-    box-shadow: 0px 1px 2px rgba(63, 63, 63, 0.1), 0px -1px 2px rgba(255, 255, 255, 0.25) inset, 0 1px 1px rgba(255, 255, 255, 0.4) inset;
-    }
-    
-    
-    
-    .field {
-        background: white;
-        color: gray;
-        max-width: 250px;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 0 auto;
-        margin-bottom: 25px;
-        box-shadow: 2px 2px 5px 1px black inset;  
-        
-    }
-    a:link {
-        text-decoration: none;
-        text-shadow: 0 0 9px white;
-        
-    }
-    
-    a:visited {
-        color: red; 
-        text-shadow: 0 0 9px white;
-    }
-     a .field {
-         margin-top:75px;
-         background: greenyellow;
-         color: black; 
-         box-shadow: none;
-         padding: 35px;
-         box-shadow: 0 0 9px white;
-     }
-     
-     input {border-radius: 13px;}
+	background: #0ebc0e;
+	background: linear-gradient(#0ebc0e, #0c960c);
+	border-color: #064f06;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px -1px 2px rgba(255, 255, 255, 0.25) inset, 0 1px 1px rgba(255, 255, 255, 0.4) inset;
+}
 
-     h3 {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        color: white;
-        text-align: center;
-        width: 280px;
-        font-weight: bold;
-        text-shadow: 0 0 9px white;
-     }
+.button:hover:active {
+	background: #0c960c;
+	background: linear-gradient(#0c960c, #0ebc0e);
+	box-shadow: 0px 1px 2px rgba(63, 63, 63, 0.1), 0px -1px 2px rgba(255, 255, 255, 0.25) inset, 0 1px 1px rgba(255, 255, 255, 0.4) inset;
+}
 
-     ul {
-         padding-left: 10px;
-         margin: 0px;
-         margin-top: 15px;
-     }
-     
-     li { 
-         padding-left: 30px;
-         list-style-type: none;
-     }
+.field {
+	background: white;
+	color: gray;
+	max-width: 250px;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	box-shadow: 2px 2px 5px 1px black inset;
+}
 
-     
-     table {
-    
-      font-family: arial, sans-serif;
-      /* margin-right: 300px;*/
-      float: right;
-      display: inline-block;  
-  
-          
-      /*border-collapse: collapse;
+a:link {
+	text-decoration: none;
+	text-shadow: 0 0 9px white;
+}
+
+a:visited {
+	color: red;
+	text-shadow: 0 0 9px white;
+}
+
+a .field {
+	margin-top: 75px;
+	background: greenyellow;
+	color: black;
+	box-shadow: none;
+	padding: 35px;
+	box-shadow: 0 0 9px white;
+}
+
+input {
+	border-radius: 13px;
+}
+
+h3 {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	color: white;
+	text-align: center;
+	width: 280px;
+	font-weight: bold;
+	text-shadow: 0 0 9px white;
+}
+
+ul {
+	padding-left: 10px;
+	margin: 0px;
+	margin-top: 15px;
+}
+
+li {
+	padding-left: 30px;
+	list-style-type: none;
+}
+
+table {
+	font-family: arial, sans-serif;
+	/* margin-right: 300px;*/
+	float: right;
+	display: inline-block;
+	/*border-collapse: collapse;
       width: 21%;
       margin-right: 1em;
       /*padding-top: 650px;
       float: right;
       /*display: inline flex;
       position: relative;*/
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: center;
-      padding: 8px;  
-      border: 1px dashed black;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-  /*
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	border: 1px dashed black;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+
+/*
     .word-counts {
         padding: 15px;
     }
   
   */
+
+
+/* Fixed Repositioning Of Html Tables */
+
+#post-counts {
+	float: right;
+	clear: both;
+	margin: 1em;
+}
+
+#alice-count {
+	float: left;
+	clear: both;
+	margin: 1em;
+}

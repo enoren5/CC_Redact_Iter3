@@ -7,6 +7,12 @@ from wordcounters.views import wordcounters
 def posts(request):
     # Based on Pankaj Mishra's SO answere here: https://stackoverflow.com/a/45411928/6095646
     # This is Pankaj Mishra's hit counter:
+    context = BlogWordsCount()
+
+    return render(request, 'alls/landings.html', context)
+
+def BlogWordsCount():
+
     if (PageView.objects.count()<=0):
         x = PageView.objects.create()
         x.save()
@@ -22,4 +28,3 @@ def posts(request):
     context.update(wordcounters(request))
 
     return render(request, 'alls/landings.html', context)
-    
