@@ -6,7 +6,7 @@ def home(request):
         number = request.GET['ccEntry']
         redacted_num = 'xxxx xxxx {}'.format(number[-4:])
         posts = Posts.objects.all().order_by('-pub_date')
-        context = BlogWordsCount()
+        context = BlogWordsCount(request)
 
         context.update(
             {'number':number, 'redacted_num':redacted_num, 'posts':posts, "temp": True}, 

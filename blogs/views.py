@@ -2,15 +2,16 @@ import operator
 from django.shortcuts import redirect, render, get_object_or_404
 from blogs.models import Posts, PageView
 from .utils import top_word_counts
+from wordcounters.views import wordcounters
 
 def posts(request):
     # Based on Pankaj Mishra's SO answere here: https://stackoverflow.com/a/45411928/6095646
     # This is Pankaj Mishra's hit counter:
-    context = BlogWordsCount()
+    context = BlogWordsCount(request)
 
     return render(request, 'alls/landings.html', context)
 
-def BlogWordsCount():
+def BlogWordsCount(request):
 
     if (PageView.objects.count()<=0):
         x = PageView.objects.create()
@@ -24,17 +25,8 @@ def BlogWordsCount():
     # The posts content:
     posts = Posts.objects.all().order_by('-pub_date')
     context.update({'posts':posts})
-    post_string = ''
-    for post in posts:
-        post_string += post.body
-    
-    # Counting words of Bible.txt + posts content:
-    post_words = top_word_counts(post_string.lower())
-    alice_words = top_word_counts(
-        open("wordcounters/Bible.txt", "r").read().lower())
 
-    context.update({
-        'post_words': post_words,
-        'alice_words': alice_words
-    })
+    context.update(wordcounters(request))
+
     return context
+    
