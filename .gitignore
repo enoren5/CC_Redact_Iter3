@@ -4,7 +4,6 @@ venv
 /staticfiles
 db.sqlite3
 *.code-workspace
-*.sqlite3
 *.cpython-38.pyc
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
@@ -16,8 +15,6 @@ db.sqlite3
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -153,3 +150,5 @@ dmypy.json
 .pytype/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+
+.vscode
