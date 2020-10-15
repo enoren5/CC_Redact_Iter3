@@ -80,8 +80,8 @@
 
   <div class="post-content">
     {% for post in posts %}
-    <h1> Blog post title: <em>{{ post.title }}</strong></em>
-      <h4>Publication Date: {{ post.pub_date_preference }}</h4>
+    <h1><strong><em>{{ post.title }}</strong></em></h1>
+      <h5><strong>Publication Date:</strong> {{ post.pub_date_preference }}</h5>
       <img src="{{ post.image.url }}" class="authors-pic" />
 
       <!-- Body text should go here :   -->
@@ -112,7 +112,7 @@
       <div id='alice-count' class="alice-count">
         <table>
           <tr>
-            <td colspan="2">Bible Top 10 Word Counts</td>
+            <td colspan="2">Alice Top 10 Word Counts</td>
           </tr>
           <tr>
             <th>Words</th>

@@ -30,7 +30,7 @@ def top_10():
 
     post_text = post_string.lower()
 
-    alice_text = open("wordcounters/Bible.txt", "r").read().lower()
+    alice_text = open("wordcounters/Alice.txt", "r").read().lower()
 
     return post_text, alice_text
     
