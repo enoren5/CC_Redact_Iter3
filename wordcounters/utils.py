@@ -5,7 +5,7 @@ from blogs.models import Posts
 
 def top_word_counts(text):
 	stoplist = stopwords.words('english')
-	stoplist.extend(["said", "gutenberg", "could", "would", "shall", "unto", "thou", "thy", "ye", "thee","upon", "hath","came", "come",])
+	stoplist.extend(["said", "gutenberg", "could", "would", "shall", "unto", "thou", "thy", "ye", "thee","upon", "hath","came", "come","things", "also", "saying", "say"])
 	# Added the mechanism to extend the list to include integers between 0 and 1999
 	extendinteger = list(range(0, 2000))
 	# Using map() it will convert the given type with one by iterations
