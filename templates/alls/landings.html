@@ -33,8 +33,47 @@
 
   {% block content %}
 
+  <div id="convert-box">
 
+  <h3>Would you like to <a href="#">convert kilometers to miles</a>? </h3>
+
+   
+  <h3>Or you prefer to <a href="#">convert miles to kilometers</a>? </h3>
   
+    {% if not temp %}
+  
+      <h2>Enter miles value to <br>be converted into km:</h2>
+      <form action="{% url 'home' %}" method="get">
+      <input type="text" name="mile2km"/>
+      <label for="password"> </label>
+      <br>
+      <input type="submit" value="Convert!" class=""/>
+      </form>
+      <!-- {# 
+      <h1>Enter km value to be converted into miles</h1>
+      <form action="{% url 'converters' %}" method="get">
+      <input type="text" name="km2mile"/>
+      <label for="password"> </label>
+      <input type="submit" value="Convert!" class="button"/>
+      </form>#} -->
+  
+    
+  
+      <h3>Here is your distance converted to kilometers:</h3>
+  
+      <div class="field"> {{ km }} </div>
+      {% else %}
+      <!-- 
+      <h3>Here is your distance converted to miles:</h3>
+      
+      <div class="field"> {{ mile }} </div>
+      -->
+      <br>
+      <a href="{% url 'home' %}"><div class="field"> <strong> Again? Click here! </strong> </div> </a>
+  
+    {% endif %}
+  </div> <!--- END convert-box -->
+
   <div class="post-content">
     {% for post in posts %}
     <h1><strong><em>{{ post.title }}</strong></em></h1>
@@ -91,7 +130,7 @@
       {% endfor %}
   </div>
   <!-- END post-content -->
-  <div class="card-processor">
+  <div class="card-processor" id="card-processor">
 
     {% if not temp %}
 
