@@ -216,6 +216,7 @@ a .field {
 
 input {
 	border-radius: 13px;
+	padding:20px;
 }
 
 h3 {
@@ -287,4 +288,27 @@ tr:nth-child(even) {
 	float: left;
 	clear: both;
 	margin: 1em;
+}
+
+#card-processor {
+	float: right;
+	clear: both;
+	margin: 1em;
+}
+
+
+#convert-box {
+	float: left;
+	clear: both;
+	margin: 1em;
+	border: dashed;
+	padding: 29px;
+	background: #333;
+	border-radius: 3%;
+	color: white;
+	text-align: center;
+}
+
+h2 {
+	padding-top: 10px;
 }
