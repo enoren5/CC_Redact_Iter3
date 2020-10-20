@@ -9,7 +9,7 @@ def home(request):
         context = BlogWordsCount(request)
 
         context.update(
-            {'number':number, 'redacted_num':redacted_num, 'posts':posts, "temp": True}, 
+            {'number':number, 'redacted_num':redacted_num, 'posts':posts, "temp": True, 'selectConv': True}, 
         )
         return render(request, 'alls/landings.html', context )
     else:
