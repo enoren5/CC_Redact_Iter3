@@ -6,6 +6,7 @@ from wordcounters.views import wordcounters
 
 def posts(request):
     context = BlogWordsCount(request)
+    context.update({'selectConv': True})
     return render(request, 'alls/landings.html', context)
 
 def BlogWordsCount(request):
