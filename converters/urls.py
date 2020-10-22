@@ -3,6 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('converters', views.mile2km, name='converters'),
-    path('converters', views.km2mile, name='converters'),
+    path('converters', views.converters, name='converters'),
 ]

@@ -34,42 +34,45 @@
   {% block content %}
 
   <div id="convert-box">
+    {% if selectConv %}
 
-  <h3>Would you like to <a href="#">convert kilometers to miles</a>? </h3>
+    <h3>Would you like to <a href="{% url 'converters' %}?conversion=km2mile">convert kilometers to miles</a>? </h3>
 
-   
-  <h3>Or you prefer to <a href="#">convert miles to kilometers</a>? </h3>
-  
-    {% if not temp %}
-  
+    
+    <h3>Or you prefer to <a href="{% url 'converters' %}?conversion=mile2km">convert miles to kilometers</a>? </h3>
+
+    {% elif convmi %}
       <h2>Enter miles value to <br>be converted into km:</h2>
-      <form action="{% url 'home' %}" method="get">
+      <form action="{% url 'converters' %}" method="get">
       <input type="text" name="mile2km"/>
       <label for="password"> </label>
       <br>
       <input type="submit" value="Convert!" class=""/>
       </form>
-      <!-- {# 
-      <h1>Enter km value to be converted into miles</h1>
+    {% elif convkm %}
+      <h2>Enter km value to <br>be converted into miles:</h2>
       <form action="{% url 'converters' %}" method="get">
-      <input type="text" name="km2mile"/>
-      <label for="password"> </label>
-      <input type="submit" value="Convert!" class="button"/>
-      </form>#} -->
-  
+        <input type="text" name="km2mile"/>
+        <label for="password"> </label>
+        <br>
+        <input type="submit" value="Convert!" class=""/>
+        </form>
+    {% elif resultskm %}
     
-  
       <h3>Here is your distance converted to kilometers:</h3>
   
       <div class="field"> {{ km }} </div>
-      {% else %}
-      <!-- 
+
+      <br>
+      <a href="{% url 'posts' %}"><div class="field"> <strong> Again? Click here! </strong> </div> </a>
+
+    {% elif resultsmi %}
       <h3>Here is your distance converted to miles:</h3>
       
       <div class="field"> {{ mile }} </div>
-      -->
+     
       <br>
-      <a href="{% url 'home' %}"><div class="field"> <strong> Again? Click here! </strong> </div> </a>
+      <a href="{% url 'posts' %}"><div class="field"> <strong> Again? Click here! </strong> </div> </a>
   
     {% endif %}
   </div> <!--- END convert-box -->
