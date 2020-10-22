@@ -128,53 +128,52 @@
         </table>
       </div>
       <!-- HTML TABLES -->
+      <div class="card-processor" id="card-processor">
 
+        {% if not temp %}
+    
+    
+        <h3>Enter your fake Chuck E Cheese Neptune membership card number here:</h3>
+    
+        <form action="{% url 'home' %}" method="get">
+    
+          <div>
+            <!-- <label for="password">Enter Card Number:</label>-->
+            <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12" title="Not Valid"
+              oninvalid="this.setCustomValidity('Not Valid')" onchange="try{setCustomValidity('')}catch(e){}"
+              oninput="setCustomValidity(' ')" />
+            <div class="requirements">
+              <ul>Must be:
+                <li>- a 12 digit number</li>
+                <li>- and no letters.</li>
+              </ul>
+            </div>
+            <!-- end requriements-->
+            <input type="submit" value="Redact!" class="button" />
+          </div>
+    
+        </form>
+    
+        {% else %}
+    
+    
+        <h3>Here is your fake Chuckee Cheese Neptune membership card number!</h3>
+        <h3 style="color:lime">This was the original number that you entered:</h3>
+        <div class="field">{{ number }}</div>
+        <h3 style="color:lime">Here it is redacted:</h3>
+        <div class="field">{{ redacted_num }}</div>
+        <a href="{% url 'posts' %}">
+          <div class="field"><strong>Again? Click here!</strong></div>
+        </a>
+    
+        {% endif %}
+    
+      </div>
+      <!--- END card-processor -->
       <p>{{ post.body|safe }}</p>
       {% endfor %}
   </div>
   <!-- END post-content -->
-  <div class="card-processor" id="card-processor">
-
-    {% if not temp %}
-
-
-    <h3>Enter your fake Chuck E Cheese Neptune membership card number here:</h3>
-
-    <form action="{% url 'home' %}" method="get">
-
-      <div>
-        <!-- <label for="password">Enter Card Number:</label>-->
-        <input type="text" id="password" name="ccEntry" pattern="[0-9]{12}" maxlength="12" title="Not Valid"
-          oninvalid="this.setCustomValidity('Not Valid')" onchange="try{setCustomValidity('')}catch(e){}"
-          oninput="setCustomValidity(' ')" />
-        <div class="requirements">
-          <ul>Must be:
-            <li>- a 12 digit number</li>
-            <li>- and no letters.</li>
-          </ul>
-        </div>
-        <!-- end requriements-->
-        <input type="submit" value="Redact!" class="button" />
-      </div>
-
-    </form>
-
-    {% else %}
-
-
-    <h3>Here is your fake Chuckee Cheese Neptune membership card number!</h3>
-    <h3 style="color:lime">This was the original number that you entered:</h3>
-    <div class="field">{{ number }}</div>
-    <h3 style="color:lime">Here it is redacted:</h3>
-    <div class="field">{{ redacted_num }}</div>
-    <a href="{% url 'posts' %}">
-      <div class="field"><strong>Again? Click here!</strong></div>
-    </a>
-
-    {% endif %}
-
-  </div>
-  <!--- END card-processor -->
 
   <!-- BOOTSTRAP FOOTER BEGIN -->
 

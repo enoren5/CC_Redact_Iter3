@@ -280,7 +280,7 @@ tr:nth-child(even) {
 
 #post-counts {
 	float: right;
-	clear: both;
+	clear: right;
 	margin: 1em;
 }
 
