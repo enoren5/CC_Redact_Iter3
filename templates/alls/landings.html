@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load markdownify %}
 <!doctype html>
 
 <html lang="en">
@@ -17,7 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+  <link rel="stylesheet" href="{% static 'css/zenburn.css' %}">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/9a80da2fe7.js" crossorigin="anonymous"></script>
   <script></script>
@@ -25,7 +25,10 @@
 
   <title>CC Redact</title>
 
-  <style> </style>
+  <style>.highlight  { 
+    max-width: 475px;
+    margin: auto;
+} </style>
 
 </head>
 
@@ -170,7 +173,7 @@
     
       </div>
       <!--- END card-processor -->
-      <p>{{ post.body|safe }}</p>
+      <p>{{ post.body|markdown|safe }}</p>
       {% endfor %}
   </div>
   <!-- END post-content -->
