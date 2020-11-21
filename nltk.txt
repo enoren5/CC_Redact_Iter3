@@ -1,2 +1,4 @@
 corpora
 english
+stopwords
+corpus
