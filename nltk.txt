@@ -1,4 +1,0 @@
-corpora
-english
-stopwords
-corpus
