@@ -25,6 +25,7 @@ pylint==2.6.0
 pyparsing==2.4.7
 pytest==6.0.2
 python-decouple==3.3
+python-dotenv==0.15.0
 pytz==2020.1
 regex==2020.6.8
 six==1.15.0
